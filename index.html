@@ -38,23 +38,9 @@
     <script src= "script.js" ></script>
     <script>
         // existing JavaScript code goes here
-        function bloomFlower() {
-    var flower = document.getElementById('flower');
-
-    // Toggle the 'hidden' class to show/hide the flower
-    flower.classList.toggle('hidden');
-
-    // Reset the flower state after animation ends
-    setTimeout(function () {
-        flower.classList.toggle('hidden');
-    }, 1000);
-}
-
+        
 let basicMaterial, shaderMaterial;
-let renderer = new THREE.WebGLRenderer({
-    canvas: canvasEL,
-    alpha: true,
-});
+
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 let sceneShader = new THREE.Scene();
 let sceneBasic = new THREE.Scene();
@@ -65,8 +51,9 @@ let flowerObject;  // Added flowerObject variable
 // Existing Three.js initialization code...
 function init() {
     // Create a scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    // Replace these lines in the init function
+    const scene = sceneShader;
+    const camera = camera;
     const renderer = new THREE.WebGLRenderer();
 
     // Add objects, lights, etc.
@@ -120,9 +107,16 @@ function clearScene() {
         flowerObject = null; // Optionally set it to null to indicate that it's removed
     }
 }
+    function bloomFlower() {
+        var flower = document.getElementById('flower');
+        flower.classList.toggle('hidden');
+        setTimeout(function () {
+            flower.classList.toggle('hidden');
+        }, 1000);
+    }
 
-// Start the initialization process
-init();
+    // Start the initialization process
+    init();
     </script>
 </body>
 </html>
