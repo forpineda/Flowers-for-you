@@ -29,7 +29,6 @@
         }
         .flower {
             position: absolute;
-            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -242,11 +241,11 @@
 
         .flower__text {
             position: fixed;
-            top: -50px; /* Start the text off the screen */
+            top: -50px;  /*Start the text off the screen */
             left: 50%;
             transform: translateX(-50%);
             font-family: serif;
-            font-size: 50px;
+            font-size: 30px;
             color: white;
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
             z-index: 10; 
@@ -269,7 +268,7 @@
                 top: -50px; /* Start position */
             }
             to {
-                top: 80px; /* End position */
+                top: -400px; /* End position */
             }       
         }
         @keyframes slideIn2 {
@@ -277,7 +276,7 @@
                 right: -200px; /* Start position */
             }
             to {
-                 right: 500px; /* End position */
+                 right: 10px; /* End position */
             }
 }
     </style>
